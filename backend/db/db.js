@@ -4,9 +4,9 @@ const db = async() => {
     try {
         mongoose.set('strictQuery', false);
         await mongoose.connect(process.env.MONGO_URL);
-        console.log('DB Conencted')
+        console.log('Database Connected')
     } catch {
-        console.log('DB Connection Error')
+        console.log('Database Connection Error')
     }
 }
 
