@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
 import avatar from '../../img/avatar.png';
+import { menuItems } from '../../utils/useMenuItems';
+import { signout } from '../../utils/useIcons';
 
 function Navigation() {
     return (
@@ -14,8 +16,19 @@ function Navigation() {
             </div>
 
             <ul className="menu-items">
-
+                {menuItems.map((item) => {
+                    return <li key={item.id}>
+                        {item.icon}
+                        <span>{item.title}</span>
+                    </li>
+                })}
             </ul>
+
+            <div className="bottom-nav">
+                <li>
+                    {signout} Sign Out
+                </li>
+            </div>
         </NavStyled>
     )
 }
