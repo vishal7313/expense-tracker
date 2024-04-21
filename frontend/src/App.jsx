@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import bg from './img/bg.png'
 import { MainLayout } from './styles/Layouts';
 import Orb from './Components/Orb/Orb';
+import Navigation from './Components/Navigation/Navigation';
 
 function App() {
     const [count, setCount] = useState(0)
@@ -11,7 +12,7 @@ function App() {
         <AppStyled bg={bg} className='App'>
             <Orb />
             <MainLayout>
-                This is a test
+                <Navigation />
             </MainLayout>
         </AppStyled>
     )
