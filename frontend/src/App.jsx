@@ -16,6 +16,9 @@ function App() {
             {orbMemo}
             <MainLayout>
                 <Navigation active={active} setActive={setActive} />
+                <main>
+                    <h1>Hello</h1>
+                </main>
             </MainLayout>
         </AppStyled>
     )
@@ -31,6 +34,7 @@ const AppStyled = styled.div`
         border: 3px solid #FFFFFF;
         backdrop-filter: blur(4.5px);
         border-radius: 32px;
+        overflow: auto;
         overflow-x: hidden;
         &::-webkit-scrollbar {
             width: 0;
