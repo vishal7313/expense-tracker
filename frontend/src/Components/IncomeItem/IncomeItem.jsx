@@ -76,7 +76,7 @@ function IncomeItem({
                             {description}
                         </p>
                     </div>
-                    <div className="btb-container">
+                    <div className="btb-con">
                         <Button 
                             icon={trash}
                             bPad={'1rem'}
@@ -85,6 +85,7 @@ function IncomeItem({
                             color={'#fff'}
                             iColor={'#fff'}
                             hColor={'var(--color-green)'}
+                            onClick={() => deleteItem(id)}
                         />
                     </div>
                 </div>

@@ -6,11 +6,11 @@ import Form from '../Form/Form';
 import IncomeItem from '../IncomeItem/IncomeItem';
 
 function Income() {
-    const {addIncome, getIncomes, incomes} = useGlobalContext();
+    const {addIncome, getIncomes, incomes, deleteIncome} = useGlobalContext();
     
     useEffect (() => {
         getIncomes()
-    }, [incomes])
+    }, [])
 
     return (
         <IncomeStyle>
@@ -37,6 +37,7 @@ function Income() {
                                 type={type}
                                 category={category} 
                                 indicatorColor="var(--color-green)"
+                                deleteItem={deleteIncome}
                             />
                         })}
                     </div>
