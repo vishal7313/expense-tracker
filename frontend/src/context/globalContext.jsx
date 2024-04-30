@@ -58,7 +58,7 @@ export const GlobalProvider = ({ children }) => {
         getExpenses()
     }
 
-    const totalExpenses = () => {
+    const totalExpense = () => {
         let totalExpense = 0;
         expenses.forEach((expense) => {
             totalExpense += expense.amount;
@@ -77,7 +77,7 @@ export const GlobalProvider = ({ children }) => {
             getExpenses,
             expenses,
             deleteExpense,
-            totalExpenses
+            totalExpense
         }}>
             {children}
         </GlobalContext.Provider>
