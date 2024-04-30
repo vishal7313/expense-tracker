@@ -6,26 +6,26 @@ import IncomeItem from '../IncomeItem/IncomeItem';
 import ExpenseForm from './ExpenseForm';
 
 function Expenses() {
-    const {addIncome, getIncomes, incomes, deleteIncome, totalIncome} = useGlobalContext();
+    const {addExpense, getExpenses, expenses, deleteExpense, totalExpense} = useGlobalContext();
     
     useEffect (() => {
-        getIncomes()
+        getExpenses()
     }, [])
 
     return (
-        <IncomeStyle>
+        <ExpenseStyle>
             <InnerLayout>
                 <h1>Expenses</h1>
-                <h2 className='total-income'>Total Expenses: <span>${totalIncome()}</span>
+                <h2 className='total-expense'>Total Expenses: <span>${totalExpense()}</span>
                 </h2>
 
-                <div className="income-content">
+                <div className="expense-content">
                     <div className="form-container">
                         <ExpenseForm />
                     </div>
-                    <div className='incomes'>
-                        {incomes.map((income) => {
-                            const {_id, title, amount, date, category, description, type} = income;
+                    <div className='expenses'>
+                        {expenses.map((expense) => {
+                            const {_id, title, amount, date, category, description, type} = expense;
                             return <IncomeItem
                                 key={_id}
                                 id={_id} 
@@ -36,20 +36,20 @@ function Expenses() {
                                 type={type}
                                 category={category} 
                                 indicatorColor="var(--color-green)"
-                                deleteItem={deleteIncome}
+                                deleteItem={deleteExpense}
                             />
                         })}
                     </div>
                 </div>
             </InnerLayout>
-        </IncomeStyle>
+        </ExpenseStyle>
     )
 }
 
-const IncomeStyle = styled.div`
+const ExpenseStyle = styled.div`
     display: flex;
     overflow: auto;
-    .total-income {
+    .total-expense {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -67,10 +67,10 @@ const IncomeStyle = styled.div`
             color: var(--color-green);
         }
     }
-    .income-content {
+    .expense-content {
         display: flex;
         gap: 2rem;
-        .incomes {
+        .expenses {
             flex: 1;
         }
     }
