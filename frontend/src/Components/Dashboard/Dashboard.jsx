@@ -7,6 +7,11 @@ function Dashboard() {
         <DashboardStyle>
             <InnerLayout>
                 <h1>Dashboard</h1>
+                <div className="stats-con">
+                    <div className="chart-con">
+                        
+                    </div>
+                </div>
             </InnerLayout>
         </DashboardStyle>
     )
