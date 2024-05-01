@@ -1,6 +1,5 @@
 import React from 'react'
-import {
-    Chart as ChartJs, 
+import {Chart as ChartJs, 
     CategoryScale,
     LinearScale,
     PointElement,
@@ -11,7 +10,7 @@ import {
     ArcElement,
 } from 'chart.js'
 
-import { Line  } from 'react-chartjs-2'
+import {Line} from 'react-chartjs-2'
 import styled from 'styled-components'
 import { useGlobalContext } from '../../context/globalContext'
 import { dateFormat } from '../../utils/dateFormat'
@@ -28,7 +27,8 @@ ChartJs.register(
 )
 
 function Chart() {
-    const { incomes, expenses } = useGlobalContext()
+    const {incomes, expenses} = useGlobalContext()
+
     const data = {
         labels: incomes.map((inc) =>{
             const {date} = inc
@@ -60,8 +60,8 @@ function Chart() {
         ]
     }
     return (
-        <ChartStyled>
-            <Line data={data}/>
+        <ChartStyled >
+            <Line data={data} />
         </ChartStyled>
     )
 }

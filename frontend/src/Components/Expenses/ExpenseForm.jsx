@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import DatePicker from "react-datepicker";
+import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css";
 import { useGlobalContext } from '../../context/globalContext';
 import Button from '../Button/Button';
@@ -134,7 +134,7 @@ const ExpenseFormStyled = styled.form`
 
     .selects {
         display: flex;
-        justify-content: flex-start;
+        justify-content: flex-end;
         select {
             color: rgba(34, 34, 96, 0.4);
             &:focus, &:active{
