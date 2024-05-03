@@ -50,7 +50,7 @@ function Dashboard() {
                                 ${Math.min(...incomes.map(item => item.amount))}
                             </p>
                             <p>
-                                ${Math.max(...incomes.map(item => item.amount))}
+                                ${Math.max(...incomes.map(item => item.amount), 0)}
                             </p>
                         </div>
                         <h2 className="salary-title">Min <span>Expense</span>Max</h2>
@@ -59,7 +59,7 @@ function Dashboard() {
                                 ${Math.min(...expenses.map(item => item.amount))}
                             </p>
                             <p>
-                                ${Math.max(...expenses.map(item => item.amount))}
+                                ${Math.max(...expenses.map(item => item.amount), 0)}
                             </p>
                         </div>
                     </div>
