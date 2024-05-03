@@ -28,9 +28,9 @@ ChartJs.register(
 
 function Chart() {
     const {incomes, expenses} = useGlobalContext()
-
+    const totalTransactions = [...incomes, ...expenses];
     const data = {
-        labels: incomes.map((inc) =>{
+        labels: totalTransactions.map((inc) =>{
             const {date} = inc
             return dateFormat(date)
         }),
