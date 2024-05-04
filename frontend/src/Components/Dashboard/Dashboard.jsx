@@ -35,7 +35,7 @@ function Dashboard() {
                             </div>
                             <div className="balance">
                                 <h2>Remaining Balance</h2>
-                                <p>
+                                <p className={totalBalance() < 0 ? 'negativeBalance' : 'positiveBalance'}>
                                     {dollar} {totalBalance()}
                                 </p>
                             </div>
@@ -104,10 +104,16 @@ const DashboardStyle = styled.div`
                     justify-content: center;
                     align-items: center;
                     p {
-                        color: var(--color-green);
                         opacity: 0.6;
                         font-size: 4.5rem;
                     }
+                }
+
+                .negativeBalance {
+                    color: red;
+                }
+                .positiveBalance {
+                    color: var(--color-green);
                 }
             }
         }
