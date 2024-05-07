@@ -4,7 +4,9 @@ import { useGlobalContext } from '../../context/globalContext';
 import History from '../../History/History';
 import { InnerLayout } from '../../styles/Layouts';
 import Chart from '../Chart/Chart';
+
 import { dollar } from '../../utils/useIcons';
+import DoughnutChart from '../Chart/DoughnutChart';
 
 function Dashboard() {
     const {totalExpense, incomes, expenses, totalIncome, totalBalance, getIncomes, getExpenses} = useGlobalContext();
@@ -19,7 +21,7 @@ function Dashboard() {
                 <h1>Dashboard</h1>
                 <div className="stats-con">
                     <div className="chart-con">
-                        <Chart/>
+                        <DoughnutChart/>
                         <div className="amount-con">
                             <div className="income">
                                 <h2>Total Income</h2>
