@@ -3,24 +3,23 @@ import styled from 'styled-components'
 import { useGlobalContext } from '../../context/globalContext';
 import History from '../../History/History';
 import { InnerLayout } from '../../styles/Layouts';
-import Chart from '../Chart/Chart';
 
 import { dollar } from '../../utils/useIcons';
+import DoughnutChart from '../Chart/DoughnutChart';
 
-function Dashboard() {
+function ViewTransactions() {
     const {totalExpense, incomes, expenses, totalIncome, totalBalance, getIncomes, getExpenses} = useGlobalContext();
     useEffect(() => {
         getIncomes()
         getExpenses()
     }, [])
-
     return (
-        <DashboardStyle>
+        <ViewTransactionsStyle>
             <InnerLayout>
-                <h1>Dashboard</h1>
+                <h1>View Transactions</h1>
                 <div className="stats-con">
                     <div className="chart-con">
-                        <Chart/>
+                        <DoughnutChart/>
                         <div className="amount-con">
                             <div className="income">
                                 <h2>Total Income</h2>
@@ -66,11 +65,11 @@ function Dashboard() {
                     </div>
                 </div>
             </InnerLayout>
-        </DashboardStyle>
+        </ViewTransactionsStyle>
     )
 }
 
-const DashboardStyle = styled.div`
+const ViewTransactionsStyle = styled.div`
     .stats-con {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
@@ -151,4 +150,4 @@ const DashboardStyle = styled.div`
     }
 `;
 
-export default Dashboard
+export default ViewTransactions
